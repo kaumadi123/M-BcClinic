@@ -10,6 +10,11 @@ Mobile_Number int(10) NOT NULL ,
 Address VARCHAR(100) NOT NULL,
 City VARCHAR(20) NOT NULL,
 nic int(10) NOT NULL,
+cid int(10) NOT NULL,
+mid int(10) NOT NULL,
+moh VARCHAR(50) NOT NULL,
+pregnent VARCHAR(50) NOT NULL,
+province VARCHAR(50) NOT NULL,
 Country VARCHAR(20) NOT NULL,
 PRIMARY KEY(sid)
 );

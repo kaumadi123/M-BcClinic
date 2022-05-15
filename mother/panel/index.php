@@ -79,7 +79,7 @@
                             <img src="dist/img/user3-128x128.jpg" class="img-circle" alt="user image"/>
                           </div>
                           <h4>
-                            Admin Design Team
+                            Test Design Team
                             <small><i class="fa fa-clock-o"></i> 2 hours</small>
                           </h4>
                           <p>Why not buy a new awesome theme?</p>
@@ -238,15 +238,15 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="dist/img/avatar04.png" class="user-image" alt="User Image"/>
 				  <li class="user-name"><strong>Hey ! :-)</strong> <?$query = "SELECT * FROM users WHERE id='$username'";?></li>
-                  <span class="hidden-xs">Admin</span>
+                  <span class="hidden-xs">Test</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="dist/img/avatar04.png" class="img-circle" alt="User Image" />
                     <p>
-                      Admin - Web Developer
-                      <small>Member since Nov. 2012</small>
+                      Test - Mother
+                      <small>Member since Nov. 2022</small>
                     </p>
                   </li>
                   <!-- Menu Body -->
@@ -328,9 +328,15 @@
             </li>
 
             <li class="treeview">
-              <a href="#">
-                <i class="fa fa-share"></i> <span>Details</span>
-                <i class="fa fa-angle-left pull-right"></i>
+              <a href="../../todolist/index.php">
+                <i class="fa fa-list"></i> <span>Do List</span>
+
+              </a>
+            </li>
+			   <li class="treeview">
+              <a href="../../chat/index.php">
+                <i class="fa fa-envelope"></i> <span>Chat</span>
+
               </a>
             </li>
           </ul>
@@ -360,7 +366,7 @@
               <!-- small box -->
               <div class="small-box bg-aqua">
                 <div class="inner">
-                  <h3>
+                  <h4>
 <?php 
 	$conn=mysqli_connect('localhost','root','','shit website');
 	$query="SELECT COUNT(l_id) AS num FROM lec_allocation;";
@@ -369,16 +375,16 @@
 		$respond = mysqli_fetch_assoc($respond);
 		echo $respond['num'];
 ?>
-				  </h3>
+				  </h4>
                   <p>Division</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
                 <a  class="small-box-footer">View <i id="viewreq" class="fa fa-arrow-circle-right"></i></a>
-				<div id="hidden" style="display : none;" class="inner">
+			<div id="hidden" style="display : none;" class="inner">
 <?php 
-	$conn=mysqli_connect('localhost','root','','shit website');
+	$conn=mysqli_connect('localhost','root','','m&bc');
 	$query="SELECT COUNT(l_id) AS num, l_name FROM `lec_allocation` group by l_id;";
 		$respond = mysqli_query($conn,$query);
 		mysqli_close($conn);
@@ -393,7 +399,7 @@
               <!-- small box -->
               <div class="small-box bg-green">
                 <div class="inner">
-                  <h3>2</h3>
+                  <h4><b>Nimeshika Fernando</b></h4>
                   <p>Assigned Midwife</p>
                 </div>
                 <div class="icon">
@@ -406,7 +412,7 @@
               <!-- small box -->
               <div class="small-box bg-yellow">
                 <div class="inner">
-                  <h3>3</h3>
+                  <h4><b>Pregnant</b></h4>
                   <p>Pregnancy Status</p>
                 </div>
                 <div class="icon">
@@ -419,7 +425,7 @@
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>3</h3>
+                  <h4><b>27</b></h4>
                   <p>Age</p>
                 </div>
                 <div class="icon">
@@ -437,8 +443,7 @@
               <div class="nav-tabs-custom">
                 <!-- Tabs within a box -->
                 <ul class="nav nav-tabs pull-right">
-                  <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                  <li><a href="#" data-toggle="tab">Donut</a></li>
+
                   <li class="pull-left header"><i class="fa fa-inbox"></i> Weight Chart</li>
                 </ul>
                 <div class="tab-content no-padding">
@@ -522,106 +527,19 @@
                   <i class="ion ion-clipboard"></i>
                   <h3 class="box-title">Upcoming</h3>
                   <div class="box-tools pull-right">
-                    <ul class="pagination pagination-sm inline">
-                      <li><a href="#">&laquo;</a></li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">&raquo;</a></li>
-                    </ul>
                   </div>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <ul class="todo-list">
-                    <li>
-                      <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <!-- checkbox -->
-                      <input type="checkbox" value="" name=""/>
-                      <!-- todo text -->
-                      <span class="text">Clinic day</span>
-                      <!-- Emphasis label -->
-                      <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                      <!-- General tools such as edit or delete-->
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name=""/>
-                      <span class="text">Vaccine 1 is due</span>
-                      <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name=""/>
-                      <span class="text">Thriposha distribution</span>
-                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 9 days</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name=""/>
-                      <span class="text">Special Maternity Programme</span>
-                      <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name=""/>
-                      <span class="text">Check messages and notifications</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name=""/>
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
+<?php
+include "../../todolist/index.php";
+?>
+ 
                   </ul>
                 </div><!-- /.box-body -->
-                <div class="box-footer clearfix no-border">
-                  <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-                </div>
-              </div><!-- /.box -->
+
+              </div>		  
+			  <!-- /.box -->
 
               <!-- quick email widget -->
               <div class="box box-info">
@@ -695,7 +613,7 @@
               <div class="box box-solid bg-teal-gradient">
                 <div class="box-header">
                   <i class="fa fa-th"></i>
-                  <h3 class="box-title">Student Graph</h3>
+                  <h3 class="box-title">Threeposha Graph</h3>
                   <div class="box-tools pull-right">
                     <button class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     <button class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
@@ -708,15 +626,15 @@
                   <div class="row">
                     <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                       <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC"/>
-                      <div class="knob-label">Mail-Orders</div>
+                      <div class="knob-label">This month</div>
                     </div><!-- ./col -->
                     <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
                       <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC"/>
-                      <div class="knob-label">Online</div>
+                      <div class="knob-label">This week</div>
                     </div><!-- ./col -->
                     <div class="col-xs-4 text-center">
                       <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC"/>
-                      <div class="knob-label">In-Store</div>
+                      <div class="knob-label">This year</div>
                     </div><!-- ./col -->
                   </div><!-- /.row -->
                 </div><!-- /.box-footer -->

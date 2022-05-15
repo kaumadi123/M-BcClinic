@@ -13,6 +13,14 @@
 <table width="528" border="0">
 <tr>
 <td width="126"><form method="POST" action="connectivity-sign-up.php">
+
+<!----- Pin Code ---------------------------------------------------------->
+<tr>
+<td>NIC No</td>
+<td><input type="text/number" name="nic" maxlength="10" placeholder="Identity No" required />
+(10 digit number)
+</td>
+</tr>
 <!----- First Name ---------------------------------------------------------->
 <tr>
 <td>FIRST NAME</td>
@@ -145,9 +153,7 @@
 </td>
 </tr>
  
-<!----- Email Id ---------------------------------------------------------->
 
- 
 <!----- Mobile Number ---------------------------------------------------------->
 <tr>
 <td>MOBILE NUMBER</td>
@@ -155,18 +161,6 @@
 <input type="text" name="Mobile_Number" maxlength="10" placeholder="Optional" />
 (10 digit number)
 </td>
-</tr>
- 
-<!----- Gender ----------------------------------------------------------->
-<tr>
-<td>GENDER</td>
-<td>
-<select name="gender" id="gender" >
-<option value="-1">Select sGender:</option>
-<option value="1">Male</option>
-<option value="2">Female</option>
-
-</select></td>
 </tr>
  
 <!----- Address ---------------------------------------------------------->
@@ -182,121 +176,80 @@
 (max 30 characters a-z and A-Z)
 </td>
 </tr>
- 
-<!----- Pin Code ---------------------------------------------------------->
-<tr>
-<td>NIC No</td>
-<td><input type="text/number" name="nic" maxlength="10" placeholder="Identity No" required />
-(10 digit number)
-</td>
-</tr>
- 
-<!----- State ---------------------------------------------------------->
-<tr>
-<td>STATE</td>
-<td><input type="text" name="State" maxlength="30" placeholder="Optional" />
-(max 30 characters a-z and A-Z)
-</td>
-</tr>
- 
+   
 <!----- Country ---------------------------------------------------------->
 <tr>
 <td>COUNTRY</td>
 <td><input type="text" name="Country" value="" placeholder="Your Country ex:UK" required /></td>
 </tr>
- 
-<!----- Hobbies ---------------------------------------------------------->
+ <!----- Clinic Identity No ----------------------------------------------------------->
+<tr>
+<td>ClINIC ID</td>
+<td><input type="text/number" name="cid" maxlength="10" placeholder="Clinic Identity No" required />
+(10 digit number)
+</td>
+</tr>
+
+<!----- midwife Identity No ----------------------------------------------------------->
+<tr>
+<td>MIDWIFE ID</td>
+<td><input type="text/number" name="mid" maxlength="10" placeholder="Midwife Identity No" required />
+(10 digit number)
+</td>
+</tr>
+<!----- MOH Area ---------------------------------------------------------->
  
 <tr>
-<td>HOBBIES <br /><br /><br /></td>
+<td>MOH AREA<br /><br /><br /></td>
  
 <td>
 
-<select name="hobby" id="hobby" >
-<option value="-1">Select Hobby:</option>
-<option value="Drawing">Drawing</option>
-<option value="Singing">Singing</option>
-<option value="Dancing">Dancing</option>
-<option value="Sketching">Sketching</option>
-<option value="Others">Others</option>
+<select name="moh" id="moh" >
+<option value="-1">Select MOH Area:</option>
+<option value="Drawing">Kandy</option>
+<option value="Singing">Negambo</option>
+<option value="Dancing">Jaela</option>
+<option value="Sketching">Moratuwa</option>
+<option value="Others">Galle</option>
 
 </select>
+</td>
+</tr>
 
+<!----- Province ---------------------------------------------------------->
+ 
+<tr>
+<td>PROVINCE<br /><br /><br /></td>
+ 
+<td>
 
+<select name="province" id="province" >
+<option value="-1">Select Province:</option>
+<option value="Drawing">Central</option>
+<option value="Singing">Eastern</option>
+<option value="Dancing">North Central</option>
+<option value="Sketching">Northern</option>
+<option value="Others">North Western</option>
+<option value="Sketching">Sabaragamuwa</option>
+<option value="Others">Southern</option>
+<option value="Others">Uva</option>
+<option value="Others">Western</option>
 
+</select>
 </td>
 </tr>
  
-<!----- Qualification---------------------------------------------------------->
-<tr>
-<!--
-<td>QUALIFICATION <br /><br /><br /><br /><br /><br /><br /></td>
- 
-<td>
-<table>
- 
-<tr>
-<td align="center"><b>Sl.No.</b></td>
-<td align="center"><b>Examination</b></td>
-<td align="center"><b>Board</b></td>
-<td align="center"><b>Percentage</b></td>
-<td align="center"><b>Year of Passing</b></td>
-</tr>
- 
-<tr>
-<td>1</td>
-<td>Diploma</td>
-<td><input type="text" name="ClassX_Board" maxlength="30" /></td>
-<td><input type="text" name="ClassX_Percentage" maxlength="30" /></td>
-<td><input type="text" name="ClassX_YrOfPassing" maxlength="30" /></td>
-</tr>
- 
-<tr>
-<td>2</td>
-<td>Higher Diploma</td>
-<td><input type="text" name="ClassXII_Board" maxlength="30" /></td>
-<td><input type="text" name="ClassXII_Percentage" maxlength="30" /></td>
-<td><input type="text" name="ClassXII_YrOfPassing" maxlength="30" /></td>
-</tr>
- 
-<tr>
-<td>3</td>
-<td>Graduation</td>
-<td><input type="text" name="Graduation_Board" maxlength="30" /></td>
-<td><input type="text" name="Graduation_Percentage" maxlength="30" /></td>
-<td><input type="text" name="Graduation_YrOfPassing" maxlength="30" /></td>
-</tr>
- 
-<tr>
-<td>4</td>
-<td>Masters</td>
-<td><input type="text" name="Masters_Board" maxlength="30" /></td>
-<td><input type="text" name="Masters_Percentage" maxlength="30" /></td>
-<td><input type="text" name="Masters_YrOfPassing" maxlength="30" /></td>
-</tr>
- 
-<tr>
-<td></td>
-<td></td>
-<td align="center">(10 char max)</td>
-<td align="center">(upto 2 decimal)</td>
-</tr>
-</table>
- -->
 </td>
 </tr>
  
-<!----- Course ---------------------------------------------------------->
+<!----- Pregnant Status ---------------------------------------------------------->
 <tr>
-<td>COURSES<br />APPLIED FOR</td>
+<td>PREGNENT STATUS</td>
 <td>
-<select name="course" id="course" >
-<option value="-1">Course:</option>
-<option value="BCA">BCA</option>
-<option value="B.Com">B.Com</option>
-<option value="B.SC">B.Sc</option>
-<option value="B.A">B.A</option>
-
+<select name="pregnent" id="pregnant" >
+<option value="-1">Select:</option>
+<option value="ad">After Delivery</option>
+<option value="pgn">Pregnant</option>
 
 </select>
 
