@@ -1,10 +1,9 @@
 <?php
-define('_VALID', true);
-session_start();
-if(isset($_SESSION['USR']))
-	unset($_SESSION['USR']);
-if(isset($_COOKIE['USR']))
-	setcookie('USR', '', time()-172800);
+// remove all session variables
+session_unset();
+
+// destroy the session
+session_destroy();
 ?>
 <!DOCTYPE HTML>
 <html>

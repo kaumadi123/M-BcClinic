@@ -2,12 +2,29 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="style.css">
+<style>
+	#hidden_div,#hidden_div1,#hidden_div2,#hidden_div3 {
+    display: none;
+}
+
+	</style>
+
+<script>
+	function hideShow(divId,divId1,divId2,divId3, element) {
+		// alert(divId);
+		// alert(element.value);
+		document.getElementById(divId).style.display = element.value == 'ad' ? 'block' : 'none';
+		document.getElementById(divId1).style.display = element.value == 'ad' ? 'block' : 'none';
+		document.getElementById(divId2).style.display = element.value == 'ad' ? 'block' : 'none';
+		document.getElementById(divId3).style.display = element.value == 'ad' ? 'block' : 'none';
+	}
+	</script>
 <title>Mother | Registration</title>
 </head>
 		
 <body id="body-color">
 <div id="Sign-Up">
-		<a href="../../index.html"><img src="img/logo.png" width="150px" height="150px"></a>
+		<a href="../../staff/panel/index.php"><img src="img/logo.png" width="150px" height="150px"></a>
 
 <fieldset style="width:50%"><legend>Mother Registration Form</legend>
 <table width="528" border="0">
@@ -178,10 +195,10 @@
 </tr>
    
 <!----- Country ---------------------------------------------------------->
-<tr>
+<!-- <tr>
 <td>COUNTRY</td>
 <td><input type="text" name="Country" value="" placeholder="Your Country ex:UK" required /></td>
-</tr>
+</tr> -->
  <!----- Clinic Identity No ----------------------------------------------------------->
 <tr>
 <td>ClINIC ID</td>
@@ -241,23 +258,45 @@
  
 </td>
 </tr>
- 
+<tr>
+	<td>GROUP LETTER</td>
+	<td>
+	<select name="group_ltr" id="group" >	
+	<option value="A">A</option>
+	<option value="B">B</option>
+	<option value="A">C</option>
+	<option value="B">D</option>
+	<option value="A">E</option>
+	<option value="B">F</option>
+		
+	</select>
+	</td>
+	</tr>
 <!----- Pregnant Status ---------------------------------------------------------->
 <tr>
 <td>PREGNENT STATUS</td>
 <td>
-<select name="pregnent" id="pregnant" >
+<select name="pregnent" id="pregnant" onChange="hideShow('hidden_div','hidden_div1','hidden_div2','hidden_div3', this)">
 <option value="-1">Select:</option>
 <option value="ad">After Delivery</option>
 <option value="pgn">Pregnant</option>
 
 </select>
-
-
-
 </td>
 </tr>
- 
+<tr>
+	
+	<td id="hidden_div2">BABY'S NAME</td>
+	<td><input type="text"  name="b_name" id="hidden_div3"/></td>
+
+</tr>
+<tr>
+	
+	<td id="hidden_div">BABY'S DATE OF BIRTH</td>
+	<td><input type="date"  name="b_date_of_birth" id="hidden_div1"/></td>
+
+</tr>
+
 <!----- Submit and Reset ------------------------------------------------->
 <tr>
 <td colspan="2" align="center">
