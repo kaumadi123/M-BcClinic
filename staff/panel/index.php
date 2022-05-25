@@ -345,7 +345,12 @@ if(!$_SESSION['username']){
           </li>
           <li>
             <a href="../vaccination/index.php">
-              <i class="fa fa-envelope"></i> <span>Vaccine Details</span>
+              <i class="fa fa-edit"></i> <span>Vaccine Details</span>
+            </a>
+          </li>
+		  <li>
+            <a href="../weight/index.php">
+              <i class="fa fa-edit"></i> <span>Weight Update</span>
             </a>
           </li>
 

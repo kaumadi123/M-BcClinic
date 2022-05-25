@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 23, 2022 at 07:05 PM
+-- Generation Time: May 24, 2022 at 08:05 PM
 -- Server version: 5.6.21
--- PHP Version: 5.5.19
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `chat` (
   `sender_deleted` varchar(200) NOT NULL,
   `receiver_deleted` varchar(200) NOT NULL,
   `file` text NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chat`
@@ -47,8 +47,11 @@ INSERT INTO `chat` (`id`, `to`, `from`, `message`, `time`, `sender_read`, `recei
 (1, 'sanjana', 'sanjana', 'hi', '1652557195', 'yes', 'yes', 'yes', 'yes', ''),
 (2, 'samila', 'sanjana', 'Hi Samila', '1652557585', 'yes', 'yes', 'yes', 'yes', ''),
 (3, 'sanjana', 'samila', 'Hi sanjana', '1652557595', 'yes', 'yes', 'yes', 'yes', ''),
-(4, 'sanjana', 'sanjana', 'hi', '1653068191', 'yes', 'yes', 'no', 'no', ''),
-(5, 'samila', 'sanjana', 'test', '1653068241', 'yes', 'no', 'yes', 'no', '');
+(4, 'sanjana', 'sanjana', 'hi', '1653068191', 'yes', 'yes', 'yes', 'yes', ''),
+(5, 'samila', 'sanjana', 'test', '1653068241', 'yes', 'no', 'yes', 'no', ''),
+(6, 'samila', 'samila', 'hi', '1653389361', 'yes', 'yes', 'no', 'no', ''),
+(7, 'samila', 'sanjana', 'hi', '1653389468', 'yes', 'no', 'yes', 'no', ''),
+(8, 'samila', 'sanjana', 'hi', '1653389604', 'yes', 'no', 'yes', 'no', '');
 
 -- --------------------------------------------------------
 
@@ -71,14 +74,7 @@ CREATE TABLE IF NOT EXISTS `chat_added_files` (
 CREATE TABLE IF NOT EXISTS `chat_vpb_online_users` (
 `id` int(100) NOT NULL,
   `username` varchar(200) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `chat_vpb_online_users`
---
-
-INSERT INTO `chat_vpb_online_users` (`id`, `username`) VALUES
-(6, 'samila');
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -94,14 +90,6 @@ CREATE TABLE IF NOT EXISTS `chat_vpb_users` (
   `photo` text NOT NULL,
   `date` varchar(200) NOT NULL
 ) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `chat_vpb_users`
---
-
-INSERT INTO `chat_vpb_users` (`id`, `fullname`, `username`, `password`, `photo`, `date`) VALUES
-(11, 'Samila', 'samila', '81dc9bdb52d04dc20036dbd8313ed055', '', '14-05-2022'),
-(10, 'Sanjana', 'sanjana', '81dc9bdb52d04dc20036dbd8313ed055', '', '14-05-2022');
 
 -- --------------------------------------------------------
 
@@ -141,6 +129,7 @@ CREATE TABLE IF NOT EXISTS `doc_request` (
 --
 
 INSERT INTO `doc_request` (`request_ID`, `name`, `specialization`) VALUES
+('', 'Dr.Sunil Fernando', ''),
 ('1', 'Dr.Sunil Fernando', 'VOG'),
 ('2', 'Dr.Tharushi Liyanage', 'VOG'),
 ('3', 'Dr.Shashikumar Balchandra', 'VOG');
@@ -164,12 +153,9 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 INSERT INTO `events` (`evt_id`, `evt_start`, `evt_end`, `evt_text`, `evt_color`) VALUES
-(3, '2022-05-25 00:00:00', '2022-05-25 00:00:00', 'Test 2', '#e1390e'),
-(4, '2022-05-11 00:00:00', '2022-05-11 00:00:00', 'test 35', '#f9ffe5'),
-(6, '2022-01-05 00:00:00', '2022-01-05 00:00:00', 'dlrv', '#e4edff'),
-(7, '2022-05-03 00:00:00', '2022-05-03 00:00:00', 'jfjfhf', '#e4edff'),
-(8, '2022-05-04 00:00:00', '2022-05-04 00:00:00', 'qq', '#e4edff'),
-(9, '2022-05-04 00:00:00', '2022-05-04 00:00:00', 'hju', '#e4edff');
+(3, '2022-05-25 00:00:00', '2022-05-25 00:00:00', 'Vaccine', '#e1390e'),
+(4, '2022-05-11 00:00:00', '2022-05-11 00:00:00', 'Doctor meeting', '#f9ffe5'),
+(6, '2022-01-05 00:00:00', '2022-01-05 00:00:00', 'dlrv', '#e4edff');
 
 -- --------------------------------------------------------
 
@@ -187,28 +173,15 @@ CREATE TABLE IF NOT EXISTS `lec_allocation` (
 --
 
 INSERT INTO `lec_allocation` (`l_id`, `l_name`) VALUES
-(1, 'Shewon hsu'),
-(2, 'Jame Burns'),
-(3, 'Peter mark'),
-(1, 'Shewon hsu'),
-(2, 'Jame Burns'),
-(3, 'Peter mark'),
-(1, 'Shewon hsu'),
-(1, 'Shewon hsu'),
-(1, 'Shewon hsu'),
-(2, 'Jame Burns'),
-(3, 'Peter mark'),
-(1, 'Shewon hsu'),
-(2, 'Jame Burns'),
-(3, 'Peter mark'),
-(1, 'Shewon hsu'),
-(1, 'Shewon hsu'),
 (1, 'Dr.Sunil Fernando'),
 (2, 'Dr.Tharushi Liyanage'),
-(3, 'Dr.Shashikumar Balchandra'),
-(3, 'Dr.Shashikumar Balchandra'),
-(5, 'Dr.Andrew Blake'),
 (1, 'Dr.Sunil Fernando'),
+(3, 'Dr.Shashikumar Balchandra'),
+(4, 'Dr.Amaya Fernando'),
+(5, 'Dr.Andrew Blake'),
+(6, 'Dr.Nimal Bandara'),
+(1, 'Dr.Sunil Fernando'),
+(6, 'Dr.Nimal Bandara'),
 (1, 'Dr.Sunil Fernando');
 
 -- --------------------------------------------------------
@@ -248,25 +221,18 @@ CREATE TABLE IF NOT EXISTS `mother_allocation_rqst` (
   `accept_or_not` int(1) NOT NULL DEFAULT '0',
   `group_ltr` varchar(5) NOT NULL,
   `city` varchar(150) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mother_allocation_rqst`
 --
 
 INSERT INTO `mother_allocation_rqst` (`id`, `mother_nic`, `alloc_date`, `date`, `accept_or_not`, `group_ltr`, `city`) VALUES
-(14, '1234', '2022-01-05', '2022-01-06', 0, 'A', 'Kandy'),
-(57, '932312018', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy'),
-(58, '23v', '2022-05-25', '2022-05-23', 2, 'A', 'Kandy'),
-(59, '234v', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy'),
-(60, '34v', '2022-05-25', '2022-05-23', 0, 'B', 'Kandy'),
-(61, '34v', '2022-05-25', '2022-05-23', 0, 'B', 'Kandy'),
-(62, '932312018', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy'),
-(63, '23v', '2022-05-25', '2022-05-23', 1, 'A', 'Kandy'),
-(64, '234v', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy'),
-(65, '932312018', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy'),
-(66, '23v', '2022-05-25', '2022-05-23', 2, 'A', 'Kandy'),
-(67, '234v', '2022-05-25', '2022-05-23', 0, 'A', 'Kandy');
+(73, '968020484v', '2022-05-26', '2022-05-24', 2, 'A', 'Negombo'),
+(74, '968020484v', '2022-05-26', '2022-05-24', 1, 'A', 'Negombo'),
+(75, '968020484v', '2022-05-26', '2022-05-24', 1, 'A', 'Negombo'),
+(76, '932312018', '2022-05-26', '2022-05-24', 1, 'A', 'Kandy'),
+(77, '932312018', '2022-05-26', '2022-05-24', 2, 'A', 'Kandy');
 
 -- --------------------------------------------------------
 
@@ -293,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `mother_register` (
   `b_name` varchar(150) DEFAULT NULL,
   `b_dateofbirth` date DEFAULT NULL,
   `group_ltr` varchar(1) NOT NULL DEFAULT 'A'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `mother_register`
@@ -301,11 +267,7 @@ CREATE TABLE IF NOT EXISTS `mother_register` (
 
 INSERT INTO `mother_register` (`sid`, `First_Name`, `Last_Name`, `userName`, `pass`, `Email_Id`, `Mobile_Number`, `Address`, `City`, `nic`, `cid`, `mid`, `moh`, `pregnent`, `province`, `b_name`, `b_dateofbirth`, `group_ltr`) VALUES
 (1, 'Sanjana', 'Kaumadi', 'sanjana', '123456', 'sanjana@mail.com', 761821648, 'No 1/6, Nagahaella rd, Mawilmada, Kandy.', 'Kandy', '932312018', 'C001', 'M003', 'Negombo', 'Pregnant', 'Western', '', '0000-00-00', 'A'),
-(2, 'a', 's', 'sdf', '123', 'raviamilaaa82@gmail.com', 44444444, 'sdfsdf', 'Kandy', '34v', '333', '444', 'Drawing', 'ad', 'Drawing', '', '0000-00-00', 'B'),
-(3, 'q', 'w', 'sd', '12', 'raviamilaaa82@gmail.com', 44444444, 'sadasd', 'Keg', '45v', '333', '444', 'Drawing', 'ad', 'Drawing', '', '0000-00-00', 'C'),
-(4, 'f', 'l', 'un', 'pw', 'raviamilaaa82@gmail.com', 444444445, 'sdfs', 'Keg', '45v', '33345', '4444', 'Drawing', 'ad', 'Drawing', '', '0000-00-00', 'A'),
-(5, 'fstnn', 'lnm', 'sdd3', '12345', 'raviamilaaa82@gmail.com', 444444445, 'fsdfsd', 'Kandy', '23v', '333', '4444', 'Drawing', 'pgn', 'Others', '', '0000-00-00', 'A'),
-(6, 'fg', 'hj', 'sdd34', '345', 'raviamilaaa8233@gmail.com', 2147483647, 'werwer', 'Kandy', '234v', '3334566', '444578', 'Singing', 'ad', 'Drawing', 'sdfsdf', '2022-05-11', 'A');
+(7, 'Keshani', 'De Silva', 'keshani', 'keshani@123', 'keshani@gmail.com', 771543468, '165/12, Sri Wickrama Rajasinghe Rd\r\nKurana', 'Negombo', '968020484v', 'C001', 'M001', 'Singing', 'ad', 'Others', 'Shehan', '2022-01-04', 'A');
 
 -- --------------------------------------------------------
 
@@ -339,16 +301,17 @@ CREATE TABLE IF NOT EXISTS `to_do_list_contents` (
   `username` varchar(200) NOT NULL,
   `content` text NOT NULL,
   `date` varchar(200) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `to_do_list_contents`
 --
 
 INSERT INTO `to_do_list_contents` (`id`, `username`, `content`, `date`) VALUES
-(16, '::1', 'vaccine 1', '18-05-2022'),
-(17, '::1', 'clinic day', '19-05-2022'),
-(18, '::1', 'test', '21-05-2022');
+(16, '::1', 'BCG vaccine on 29th of May', '18-05-2022'),
+(17, '::1', 'clinic day - Thiposha distribution on 20th may', '19-05-2022'),
+(18, '::1', 'test', '21-05-2022'),
+(20, '::1', 'OPV 1 Pentavalent 1 on 3rd of June', '24-05-2022');
 
 -- --------------------------------------------------------
 
@@ -368,8 +331,9 @@ CREATE TABLE IF NOT EXISTS `to_do_list_mother` (
 --
 
 INSERT INTO `to_do_list_mother` (`id`, `username`, `content`, `date`) VALUES
-(0, '::1', 'gjhhjjj', '22-05-2022'),
-(0, '::1', 'gjjg', '22-05-2022');
+(0, '::1', 'weight measure - tuesday', '24-05-2022'),
+(0, '::1', 'clinic on monday', '24-05-2022'),
+(0, '::1', 'get weight reports updated', '24-05-2022');
 
 -- --------------------------------------------------------
 
@@ -394,7 +358,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `email`, `avatar`, `signup_da
 (1, 'samila123', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'samila.bboys@yahoo.com', 'yes', 1428336452),
 (2, 'samila', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'samila.thilakarathne@ymail.com', 'yes', 1428336835),
 (3, 'samila789', '7c4a8d09ca3762af61e59520943dc26494f8941b', 'shit15@outlook.com', 'yes', 1428337474),
-(4, 'test', '1234', 'test@mail.com', 'yes', 1428336835);
+(4, 'test', '1234', 'test@mail.com', 'yes', 1428336835),
+(5, 'sunil', '1234', 'sunil@mail.com', '', 0);
 
 -- --------------------------------------------------------
 
@@ -507,7 +472,7 @@ ALTER TABLE `vaccine`
 -- AUTO_INCREMENT for table `chat`
 --
 ALTER TABLE `chat`
-MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `chat_added_files`
 --
@@ -517,7 +482,7 @@ MODIFY `id` int(100) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `chat_vpb_online_users`
 --
 ALTER TABLE `chat_vpb_online_users`
-MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `chat_vpb_users`
 --
@@ -532,17 +497,17 @@ MODIFY `evt_id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `mother_allocation_rqst`
 --
 ALTER TABLE `mother_allocation_rqst`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=78;
 --
 -- AUTO_INCREMENT for table `mother_register`
 --
 ALTER TABLE `mother_register`
-MODIFY `sid` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `sid` int(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `to_do_list_contents`
 --
 ALTER TABLE `to_do_list_contents`
-MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `id` int(100) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
